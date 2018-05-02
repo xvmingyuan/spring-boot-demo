@@ -17,7 +17,7 @@ public class HelloController {
      * @Description:
      * @Param:
      * @return:
-     * @Author: 535504
+     * @Author:
      * @Adress: http://localhost:8080/hello
      * @Date: 2018/4/28
      */
