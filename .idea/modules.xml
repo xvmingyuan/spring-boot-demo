@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/spring-boot-example.iml" filepath="$PROJECT_DIR$/.idea/spring-boot-example.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-hello/spring-boot-hello.iml" filepath="$PROJECT_DIR$/spring-boot-hello/spring-boot-hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-persistent/spring-boot-persistent.iml" filepath="$PROJECT_DIR$/spring-boot-persistent/spring-boot-persistent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-staticandthymeleaf/spring-boot-staticandthymeleaf.iml" filepath="$PROJECT_DIR$/spring-boot-staticandthymeleaf/spring-boot-staticandthymeleaf.iml" />
     </modules>
   </component>
 </project>
