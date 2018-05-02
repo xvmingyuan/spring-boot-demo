@@ -7,7 +7,7 @@ import javax.persistence.Id;
 /**
  * @program: spring-boot-example
  * @description: 学生实体类
- * @author: 535504
+ * @author:
  * @create: 2018-05-02 10:47
  **/
 

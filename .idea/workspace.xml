@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5801977e-d833-464a-8ec8-a6b6d27e6685" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spring-boot-staticandthymeleaf/spring-boot-staticandthymeleaf.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/entity/Student.java" afterPath="$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/entity/Student.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/service/StudentService.java" afterPath="$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/service/StudentService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/spring-boot/target/" />
     <ignored path="$PROJECT_DIR$/spring-boot-hello/target/" />
@@ -21,20 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StudentController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/controller/StudentController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -65,9 +49,7 @@
         <option value="$PROJECT_DIR$/spring-boot-hello/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/Application.java" />
         <option value="$PROJECT_DIR$/spring-boot-persistent/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/entity/Student.java" />
         <option value="$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/dao/StudentDao.java" />
-        <option value="$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/service/StudentService.java" />
         <option value="$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/controller/StudentController.java" />
         <option value="$PROJECT_DIR$/spring-boot-persistent/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/service/StudentServiceImpl.java" />
@@ -75,6 +57,8 @@
         <option value="$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/service/UserService.java" />
         <option value="$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/service/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/entity/Student.java" />
+        <option value="$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/service/StudentService.java" />
       </list>
     </option>
   </component>
@@ -399,12 +383,12 @@
       <updated>1524882543124</updated>
       <workItem from="1524882544488" duration="3629000" />
       <workItem from="1524894502638" duration="3562000" />
-      <workItem from="1525225224932" duration="9958000" />
+      <workItem from="1525225224932" duration="10128000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17149000" />
+    <option name="totallyTimeSpent" value="17319000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -563,26 +547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/dao/StudentDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/2.0.6.RELEASE/spring-data-jpa-2.0.6.RELEASE.jar!/org/springframework/data/jpa/repository/Query.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -599,63 +563,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/service/StudentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/service/StudentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="32" lean-forward="true" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#473#474#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#602#603#0" expanded="true" />
-            <element signature="e#662#663#0" expanded="true" />
-            <element signature="e#720#721#0" expanded="true" />
-            <element signature="e#768#769#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/entity/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/sql/SQLException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="52" column="13" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -667,30 +579,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/service/UserServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="45" column="76" lean-forward="false" selection-start-line="45" selection-start-column="76" selection-end-line="45" selection-end-column="76" />
+        <state relative-caret-position="247">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1107#1108#0" expanded="true" />
-            <element signature="e#1190#1191#0" expanded="true" />
-            <marker date="1525238965102" expanded="true" signature="961:990" ph="select * fro... user" />
-            <marker date="1525238965102" expanded="true" signature="1144:1162" ph="select * fro... user" />
-            <marker date="1525238965102" expanded="true" signature="1283:1310" ph="delete from " />
-            <marker date="1525238965102" expanded="true" signature="1634:1683" ph="update user " />
-            <marker date="1525238965102" expanded="true" signature="2187:2236" ph="insert into user... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="45" column="43" lean-forward="false" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="43" />
-          <folding>
-            <element signature="e#812#813#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -701,6 +595,85 @@
           <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="45" column="43" lean-forward="false" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/dao/StudentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="55" lean-forward="true" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/entity/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/service/StudentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/service/StudentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-boot-persistent/src/main/java/com/cn/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="83" column="13" lean-forward="true" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1525238965102" expanded="true" signature="961:990" ph="select * fro... user" />
+            <marker date="1525238965102" expanded="true" signature="1144:1162" ph="select * fro... user" />
+            <marker date="1525238965102" expanded="true" signature="1283:1310" ph="delete from " />
+            <marker date="1525238965102" expanded="true" signature="1634:1683" ph="update user " />
+            <marker date="1525238965102" expanded="true" signature="2187:2236" ph="insert into user... " />
           </folding>
         </state>
       </provider>

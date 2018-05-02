@@ -5,7 +5,7 @@ import com.cn.entity.Student;
 /**
  * @program: spring-boot-example
  * @description:
- * @author: 535504
+ * @author:
  * @create: 2018-05-02 11:12
  **/
 public interface StudentService {
