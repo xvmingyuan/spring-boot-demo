@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="spring-boot-datasource" />
         <module name="spring-boot-hello" />
         <module name="spring-boot-persistent" />
         <module name="spring-boot-staticandthymeleaf" />
@@ -13,6 +14,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="spring-boot" target="1.8" />
+      <module name="spring-boot-datasource" target="1.8" />
       <module name="spring-boot-hello" target="1.8" />
       <module name="spring-boot-persistent" target="1.8" />
       <module name="spring-boot-staticandthymeleaf" target="1.8" />
