@@ -1,21 +1,19 @@
 package com.cn.datasource;
 
-import com.cn.dao.StudentDao;
-import com.cn.dao.TeacherDao;
-import java.util.HashMap;
 import java.util.Map;
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
 import javax.sql.DataSource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateSettings;
+import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
+import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.vendor.Database;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -28,40 +26,47 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EntityScan("com.cn.entity.s")
-@EnableJpaRepositories(basePackageClasses = StudentDao.class,
-    entityManagerFactoryRef = "primaryEntityManagerFactory",
-    transactionManagerRef = "primaryTransactionManager")
+@EnableJpaRepositories(
+    entityManagerFactoryRef = "entityManagerFactoryPrimary",
+    transactionManagerRef = "transactionManagerPrimary",
+    basePackages = {"com.cn.entity.s"})
 public class JpaPrimaryConfig {
 
-        @Autowired
-        @Qualifier("firstDataSource")
-        public DataSource firstDataSource;
+    @Resource
+    @Qualifier("firstDataSource")
+    private DataSource firstDataSource;
 
-        @Bean
-        @Primary
-        PlatformTransactionManager primaryTransactionManager() {
-            return new JpaTransactionManager(primaryEntityManagerFactory().getObject());
-        }
+    @Primary
+    @Bean(name = "entityManagerPrimary")
+    public EntityManager entityManager(EntityManagerFactoryBuilder builder) {
+        return entityManagerFactoryPrimary(builder).getObject().createEntityManager();
+    }
 
-        @Bean
-        @Primary
-        LocalContainerEntityManagerFactoryBean primaryEntityManagerFactory() {
-            HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
-            jpaVendorAdapter.setGenerateDdl(true);
-            jpaVendorAdapter.setDatabase(Database.POSTGRESQL);
-            jpaVendorAdapter.setDatabasePlatform("org.hibernate.dialect.PostgreSQLDialect");
-            LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
-            factoryBean.setDataSource(firstDataSource);
-            factoryBean.setJpaVendorAdapter(jpaVendorAdapter);
-            factoryBean.setJpaPropertyMap(jpaProperties());
-            return factoryBean;
-        }
+    @Resource
+    private JpaProperties jpaProperties;
 
-        private Map<String, Object> jpaProperties() {
-            Map<String, Object> props = new HashMap<>();
-            //rops.put("hibernate.ejb.naming_strategy",new SpringNamingStrategy());
-            return props;
-        }
+    private Map<String, Object> getVendorProperties() {
+        return jpaProperties.getHibernateProperties(new HibernateSettings());
+    }
+
+    /**
+     * 设置实体类所在位置
+     */
+    @Primary
+    @Bean(name = "entityManagerFactoryPrimary")
+    public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary(EntityManagerFactoryBuilder builder) {
+        return builder
+            .dataSource(firstDataSource)
+            .packages("com.cn.entity.s")
+            .persistenceUnit("primaryPersistenceUnit")
+            .properties(getVendorProperties())
+            .build();
+    }
+
+    @Primary
+    @Bean(name = "transactionManagerPrimary")
+    public PlatformTransactionManager transactionManagerPrimary(EntityManagerFactoryBuilder builder) {
+        return new JpaTransactionManager(entityManagerFactoryPrimary(builder).getObject());
+    }
 
 }

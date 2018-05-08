@@ -1,7 +1,7 @@
 package com.cn;
 
-import com.cn.dao.StudentDao;
-import com.cn.dao.TeacherDao;
+import com.cn.entity.s.StudentDao;
+import com.cn.entity.t.TeacherDao;
 import com.cn.entity.s.Student;
 import com.cn.entity.t.Teacher;
 import org.junit.Assert;
@@ -35,23 +35,11 @@ public class ApplicationTests {
 
 	@Before
 	public void setUp() {
-		jdbcTemplate1.update("DELETE  FROM  user ");
-		jdbcTemplate2.update("DELETE  FROM  user ");
-
-		studentDao.save(new Student(){
-			{
-				this.setAge(3);
-				this.setGrade(1);
-				this.setName("张三");
-			}
-		});
-		teacherDao.save(new Teacher(){
-			{
-				this.setAge("4");
-				this.setCourse("数据");
-				this.setName("李四");
-			}
-		});
+		//jdbcTemplate1.update("DELETE  FROM  user ");
+		//jdbcTemplate2.update("DELETE  FROM  user ");
+		//studentDao.findAll();
+		studentDao.save(new Student("aaa",3,4));
+		teacherDao.save(new Teacher("bbb","4","11"));
 	}
 
 	@Test
@@ -76,8 +64,8 @@ public class ApplicationTests {
 
 	@Test
 	public void test1() throws Exception {
-		System.out.println(studentDao.findByName("张三"));
-		System.out.println(teacherDao.findByName("李四"));
+		System.out.println(studentDao.findByName("aaa"));
+		System.out.println(teacherDao.findByName("bbb"));
 	}
 
 

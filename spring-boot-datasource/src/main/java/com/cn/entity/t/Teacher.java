@@ -21,6 +21,15 @@ public class Teacher {
     private String age;
     private String course;
 
+    public Teacher() {
+    }
+
+    public Teacher(String name, String age, String course) {
+        this.name = name;
+        this.age = age;
+        this.course = course;
+    }
+
     @Override
     public String toString() {
         return "Teacher{" +

@@ -1,3 +1,4 @@
+/*
 package com.cn.controller;
 
 import com.cn.entity.s.Student;
@@ -7,12 +8,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+*/
 /**
  * @program: spring-boot-example
  * @description:
  * @author:
  * @create: 2018-05-02 11:15
- **/
+ **//*
+
 @RestController
 public class JpaTestController {
 
@@ -25,3 +28,4 @@ public class JpaTestController {
     }
 
 }
+*/

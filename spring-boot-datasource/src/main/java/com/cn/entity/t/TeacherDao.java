@@ -1,6 +1,5 @@
-package com.cn.dao;
+package com.cn.entity.t;
 
-import com.cn.entity.t.Teacher;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

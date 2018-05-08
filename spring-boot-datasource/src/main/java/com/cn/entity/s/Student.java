@@ -10,7 +10,6 @@ import javax.persistence.Id;
  * @author:
  * @create: 2018-05-02 10:47
  **/
-
 @Entity
 public class Student {
 
@@ -23,6 +22,15 @@ public class Student {
     private int age;
 
     private int grade;
+
+    public Student() {
+    }
+
+    public Student(String name, int age, int grade) {
+        this.name = name;
+        this.age = age;
+        this.grade = grade;
+    }
 
     @Override
     public String toString() {
