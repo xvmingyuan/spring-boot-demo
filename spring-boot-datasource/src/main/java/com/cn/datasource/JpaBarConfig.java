@@ -27,18 +27,18 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-    entityManagerFactoryRef = "entityManagerFactorySecondary",
-    transactionManagerRef = "transactionManagerSecondary",
-    basePackages = {"com.cn.entity.t"})
-public class JpaSecondConfig {
+    entityManagerFactoryRef = "entityManagerFactoryBar",
+    transactionManagerRef = "transactionManagerBar",
+    basePackages = {"com.cn.entity.t"})//repository的目录
+public class JpaBarConfig {
 
     @Autowired
-    @Qualifier("secondDataSource")
-    private DataSource secondDataSource;
+    @Qualifier("barDataSource")
+    private DataSource barDataSource;
 
-    @Bean(name = "entityManagerSecondary")
+    @Bean(name = "entityManagerBar")
     public EntityManager entityManager(EntityManagerFactoryBuilder builder) {
-        return entityManagerFactorySecondary(builder).getObject().createEntityManager();
+        return entityManagerFactoryBar(builder).getObject().createEntityManager();
     }
 
     @Resource
@@ -48,19 +48,19 @@ public class JpaSecondConfig {
         return jpaProperties.getHibernateProperties(new HibernateSettings());
     }
 
-    @Bean(name = "entityManagerFactorySecondary")
-    public LocalContainerEntityManagerFactoryBean entityManagerFactorySecondary(EntityManagerFactoryBuilder builder) {
+    @Bean(name = "entityManagerFactoryBar")
+    public LocalContainerEntityManagerFactoryBean entityManagerFactoryBar(EntityManagerFactoryBuilder builder) {
         return builder
-            .dataSource(secondDataSource)
-            .packages("com.cn.entity.t")
-            .persistenceUnit("secondaryPersistenceUnit")
+            .dataSource(barDataSource)
+            .packages("com.cn.entity.t")//实体类的目录
+            .persistenceUnit("barPersistenceUnit")
             .properties(getVendorProperties())
             .build();
     }
 
-    @Bean(name = "transactionManagerSecondary")
-    PlatformTransactionManager transactionManagerSecondary(EntityManagerFactoryBuilder builder) {
-        return new JpaTransactionManager(entityManagerFactorySecondary(builder).getObject());
+    @Bean(name = "transactionManagerBar")
+    PlatformTransactionManager transactionManagerBar(EntityManagerFactoryBuilder builder) {
+        return new JpaTransactionManager(entityManagerFactoryBar(builder).getObject());
     }
 
 }

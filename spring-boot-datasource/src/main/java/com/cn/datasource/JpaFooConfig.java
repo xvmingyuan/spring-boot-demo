@@ -27,19 +27,19 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-    entityManagerFactoryRef = "entityManagerFactoryPrimary",
-    transactionManagerRef = "transactionManagerPrimary",
+    entityManagerFactoryRef = "entityManagerFactoryFoo",
+    transactionManagerRef = "transactionManagerFoo",
     basePackages = {"com.cn.entity.s"})
-public class JpaPrimaryConfig {
+public class JpaFooConfig {
 
     @Resource
-    @Qualifier("firstDataSource")
-    private DataSource firstDataSource;
+    @Qualifier("fooDataSource")
+    private DataSource fooDataSource;
 
     @Primary
-    @Bean(name = "entityManagerPrimary")
+    @Bean(name = "entityManagerFoo")
     public EntityManager entityManager(EntityManagerFactoryBuilder builder) {
-        return entityManagerFactoryPrimary(builder).getObject().createEntityManager();
+        return entityManagerFactoryFoo(builder).getObject().createEntityManager();
     }
 
     @Resource
@@ -53,20 +53,20 @@ public class JpaPrimaryConfig {
      * 设置实体类所在位置
      */
     @Primary
-    @Bean(name = "entityManagerFactoryPrimary")
-    public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary(EntityManagerFactoryBuilder builder) {
+    @Bean(name = "entityManagerFactoryFoo")
+    public LocalContainerEntityManagerFactoryBean entityManagerFactoryFoo(EntityManagerFactoryBuilder builder) {
         return builder
-            .dataSource(firstDataSource)
+            .dataSource(fooDataSource)
             .packages("com.cn.entity.s")
-            .persistenceUnit("primaryPersistenceUnit")
+            .persistenceUnit("fooPersistenceUnit")
             .properties(getVendorProperties())
             .build();
     }
 
     @Primary
-    @Bean(name = "transactionManagerPrimary")
-    public PlatformTransactionManager transactionManagerPrimary(EntityManagerFactoryBuilder builder) {
-        return new JpaTransactionManager(entityManagerFactoryPrimary(builder).getObject());
+    @Bean(name = "transactionManagerFoo")
+    public PlatformTransactionManager transactionManagerFoo(EntityManagerFactoryBuilder builder) {
+        return new JpaTransactionManager(entityManagerFactoryFoo(builder).getObject());
     }
 
 }

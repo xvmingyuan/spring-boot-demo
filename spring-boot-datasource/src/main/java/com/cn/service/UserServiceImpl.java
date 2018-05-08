@@ -1,10 +1,9 @@
 package com.cn.service;
 
 import com.cn.entity.u.User;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,34 +16,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService{
 
-   /* @Autowired
-    @Qualifier("aaa")*/
-    protected JdbcTemplate jdbcTemplate1;
+    @Autowired
+    @Qualifier("fooJdbcTemplate")
+    protected JdbcTemplate fooJdbcTemplate;
 
-    /*@Autowired
-    @Qualifier("bbb")*/
-    protected JdbcTemplate jdbcTemplate2;
+    @Autowired
+    @Qualifier("barJdbcTemplate")
+    protected JdbcTemplate barJdbcTemplate;
 
     @Override
     public User getUserById(int id) {
-        User user = jdbcTemplate1.queryForObject("select * from user where id=?", new Object[]{id},new UserRowMapper());
-        User user2 = jdbcTemplate2.queryForObject("select * from user where id=?", new Object[]{id},new UserRowMapper());
+        User user = fooJdbcTemplate.queryForObject("select * from user where id=?", new Object[]{id},new UserRowMapper());
+        User user2 = barJdbcTemplate.queryForObject("select * from user where id=?", new Object[]{id},new UserRowMapper());
         System.out.println(user);
         System.out.println(user2);
-        return user;
-    }
-
-}
-
-class UserRowMapper implements RowMapper<User> {
-
-    @Override
-    public User mapRow(ResultSet resultSet, int i) throws SQLException {
-        User user=new User();
-        user.setId(resultSet.getInt("id"));
-        user.setName(resultSet.getString("name"));
-        user.setAge(resultSet.getInt("age"));
-        user.setAddress(resultSet.getString("address"));
         return user;
     }
 
