@@ -29,10 +29,10 @@ public class JdbcDataSourceConfig {
     }
 
     @Primary
-    @Bean(name = "FooDataSource")
-    @Qualifier("FooDataSource")
+    @Bean(name = "fooDataSource")
+    @Qualifier("fooDataSource")
     @ConfigurationProperties(prefix="app.datasource.foo")
-    public DataSource FooDataSource(@Qualifier("dataSourcePropertiesFoo") DataSourceProperties dataSourceProperties) {
+    public DataSource fooDataSource(@Qualifier("dataSourcePropertiesFoo") DataSourceProperties dataSourceProperties) {
         return dataSourceProperties.initializeDataSourceBuilder().build();
     }
 
@@ -52,7 +52,7 @@ public class JdbcDataSourceConfig {
 
     @Bean(name = "fooJdbcTemplate")
     @Qualifier("fooJdbcTemplate")
-    public JdbcTemplate fooJdbcTemplate(@Qualifier("FooDataSource") DataSource dataSource) {
+    public JdbcTemplate fooJdbcTemplate(@Qualifier("fooDataSource") DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
 
