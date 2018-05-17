@@ -19,7 +19,7 @@ public class StudentServiceImpl implements StudentService{
     private StudentMapper studentMapper;
 
     @Override
-    @RedisCache(type = Student.class,cacheTime = 10)
+    @RedisCache(type = Student.class)
     public Student getStudentByPrimaryKey(int id) {
         return studentMapper.selectByPrimaryKey(id);
     }

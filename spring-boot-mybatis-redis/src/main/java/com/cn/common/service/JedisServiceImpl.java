@@ -1,12 +1,8 @@
 package com.cn.common.service;
 
 import com.alibaba.fastjson.JSON;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.apache.log4j.Logger;
-import org.hibernate.validator.internal.util.logging.LoggerFactory;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.GeoRadiusResponse;

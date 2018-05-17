@@ -28,12 +28,12 @@ public @interface RedisCache {
     Class type();
 
     /**
-     * @Description: 数据缓存时间
-     * @Param:
+     * @Description: 数据缓存时间单位s秒
+     * @Param:  默认10分钟
      * @return:
      * @Author:
      * @Date: 2018/5/16
      */
-    int cacheTime();
+    int cacheTime() default 600;
 
 }

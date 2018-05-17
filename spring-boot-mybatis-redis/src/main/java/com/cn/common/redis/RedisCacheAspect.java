@@ -59,6 +59,7 @@ public class RedisCacheAspect {
             logger.info("缓存未命中");
             //缓存不存在，则调用原方法，并将结果放入缓存中
             result = pjp.proceed(args);
+            redisResult = JSON.toJSONString(result);
             jedisService.set(key,redisResult,cacheTime);
         } else{
             //缓存命中
