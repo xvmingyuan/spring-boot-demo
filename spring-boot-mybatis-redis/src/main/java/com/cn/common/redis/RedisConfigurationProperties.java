@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 /**
  * @program: spring-boot-example
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * @create: 2018-05-16 15:15
  **/
 @Configuration
+@PropertySource("classpath:application.properties")
 @ConfigurationProperties(prefix = "spring.redis.cluster")
 public class RedisConfigurationProperties {
 
